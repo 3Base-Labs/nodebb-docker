@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           LOCAL_VER=$(git -c 'versionsort.suffix=-' \
               ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/3base-labs/nodebb-docker.git \
