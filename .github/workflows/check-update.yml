@@ -8,6 +8,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -36,10 +37,7 @@ jobs:
         with:
           tag_name: ${{ env.RELEASE_VER }}
           release_name: Release ${{ env.RELEASE_VER }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+          body: New release found in upstream.
           draft: false
           prerelease: false
         if: env.RELEASE_VER != env.LOCAL_VER
