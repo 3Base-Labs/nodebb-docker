@@ -19,7 +19,7 @@ jobs:
               | tail --lines=1 \
               | cut --delimiter='/' --fields=3)
           RELEASE_VER=$(git -c 'versionsort.suffix=-' \
-              ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/3base-labs/NodeBB.git \
+              ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/NodeBB/NodeBB.git \
               | tail --lines=1 \
               | cut --delimiter='/' --fields=3)
           if [[ $RELEASE_VER != $LOCAL_VER ]]; then
