@@ -14,3 +14,6 @@ nginx
 mongo-data
 askfront
 *.pem
+
+nodebb-mongo-init.js
+setup.json
