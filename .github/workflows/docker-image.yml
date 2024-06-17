@@ -21,13 +21,15 @@ jobs:
       - name: Get latest tag
         id: get-latest-tag
         uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           latest: true
 
       - name: Set latest tag
         id: set-latest-tag
         run: |
-          echo "RELEASE_VERSION={{ steps.get-latest-tag.outputs.tag_name }}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${{ steps.get-latest-tag.outputs.tag_name }}" >> $GITHUB_ENV
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
