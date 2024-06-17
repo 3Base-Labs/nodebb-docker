@@ -2,7 +2,7 @@ services:
   nodebb:
     container_name: nodebb
     restart: unless-stopped
-    image: ghcr.io/3base-labs/nodebb-docker:latest
+    image: ghcr.io/3Base-Labs/nodebb-docker:latest
     volumes:
       - ./setup.json:/usr/src/app/setup.json
       - nodebb-config:/opt/config
