@@ -32,6 +32,11 @@ jobs:
           flavor: |
             latest=true
 
+      - name: Debug Docker Meta Outputs
+        run: |
+          echo "Tags: ${{ steps.meta.outputs.tags }}"
+          echo "Labels: ${{ steps.meta.outputs.labels }}"
+
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v3
 
